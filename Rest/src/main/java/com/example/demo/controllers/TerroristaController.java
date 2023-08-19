@@ -25,19 +25,22 @@ public class TerroristaController {
         return  binladenmonth.findAll();
     }
     
-    //GET /Anime/:id
+    //GET /terrorista/:id
     @GetMapping("/terrorista/{id}")
     public Terrorista verTerrorista(@PathVariable Long id){
         return binladenmonth.findById(id);
     }
+    //DELETE /terrorista/:id
     @DeleteMapping("/terrorista/{id}")
     public void borrarRegistro(@PathVariable Long id){
         binladenmonth.delete(id);
     }
+    //POST /terrorista
     @PostMapping("/terrorista")
     public Terrorista create(@RequestBody Terrorista terrorista){
         return binladenmonth.save(terrorista);
     }
+    //PUT /terrorista/:id
     @PutMapping("/terrorista/{id}")
     public Terrorista update (@PathVariable Long id, 
     @RequestBody Terrorista terrorista) {

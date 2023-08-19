@@ -29,8 +29,8 @@ public class TerroristaService implements ITerroristaService{
         terroristaDAO.deleteById(id);
     }
     @Override
-    public Terrorista save(Terrorista anime) {
-        return terroristaDAO.save(anime);
+    public Terrorista save(Terrorista terrorista) {
+        return terroristaDAO.save(terrorista);
     }
     
 }

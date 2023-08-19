@@ -21,7 +21,7 @@ public class Terrorista implements Comparable<Terrorista>,Serializable{
     @Column
     private Integer crimenes;
     @Column
-    private Double reward;
+    private Integer reward;
     public void setNombre (String n){
         this.nombre=n;
     }
@@ -37,20 +37,20 @@ public class Terrorista implements Comparable<Terrorista>,Serializable{
     public   int getCrimenes (){
         return crimenes;
     }
-    public void setReward (double ca ){
+    public void setReward (int ca ){
         this.reward=ca;
     }
-    public Double getReward () {
+    public int getReward () {
         return reward;
     }
     @Override
     public int compareTo(Terrorista e) {
         // TODO Auto-generated method stub
-        if(this.getCrimenes()>e.getCrimenes()){
+        if(this.getReward()>e.getReward()){
             return -1;
         }
-        else if(this.getReward().equals(e.getReward())){
-            return (int) (e.getReward()-this.getReward());
+        else if(this.getCrimenes()> e.getCrimenes()){
+            return (e.getCrimenes()-this.getCrimenes());
         }
         else{
             return 1;
