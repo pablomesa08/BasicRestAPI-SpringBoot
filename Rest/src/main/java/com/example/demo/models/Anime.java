@@ -1,5 +1,4 @@
 package com.example.demo.models;
-
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
@@ -8,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="animes")
@@ -16,11 +16,12 @@ public class Anime implements Comparable<Anime>,Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min=4, max=150)
     @Column
     private String nombre;
     @Column
     private Integer capitulos;
-    @Column
+    @Column(nullable = false)
     private Double califacion;
     public void setNombre (String n){
         this.nombre=n;
