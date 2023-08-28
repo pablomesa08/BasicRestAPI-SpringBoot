@@ -10,5 +10,4 @@ public interface ITerroristaService {
     public Terrorista findById(Long id);
     public void delete(Long id);
     public Terrorista save (Terrorista terrorista);
-
 }
