@@ -1,6 +1,5 @@
 package com.example.demo.models;
 
-import java.io.Serializable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,7 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="terroristas")
-public class Terrorista implements Comparable<Terrorista>,Serializable{
+public class Terrorista {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,18 +42,4 @@ public class Terrorista implements Comparable<Terrorista>,Serializable{
     public int getReward () {
         return reward;
     }
-    @Override
-    public int compareTo(Terrorista e) {
-        // TODO Auto-generated method stub
-        if(this.getReward()>e.getReward()){
-            return -1;
-        }
-        else if(this.getCrimenes()> e.getCrimenes()){
-            return (e.getCrimenes()-this.getCrimenes());
-        }
-        else{
-            return 1;
-        }
-    }
-
 }

@@ -14,6 +14,7 @@ import java.util.List;
 import com.example.demo.models.Terrorista;
 import com.example.demo.services.ITerroristaService;
 
+//Creacion de controlador para Terrorista
 @RestController
 @RequestMapping("/binladen")
 public class TerroristaController {
